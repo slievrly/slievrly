@@ -29,7 +29,6 @@ Here are some ideas to get you started:
 
 基本要求      
 熟悉Java、Golang或C++ 至少一门语言。      
-计算机相关方向，基础理论扎实，如高等数学，数据结构，算法，操作系统，软件工程，体系结构，编译原理等。  
 加分项（任一即可）：   
 有参与过开源技术项目经验，或有大赛获奖经验，或有优秀论文发表者。   
 熟悉微服务领域相关技术或产品，如：gRPC，Dubbo，Seata ，Spring Cloud，RocketMQ，Arthas，Nacos等。   
