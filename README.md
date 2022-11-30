@@ -31,7 +31,7 @@ Here are some ideas to get you started:
 熟悉Java、Golang或C++ 至少一门语言。      
 **加分项（任一即可）：**   
 有参与过开源技术项目经验，或有大赛获奖经验，或有优秀论文发表者。   
-熟悉微服务领域相关技术或产品，如：gRPC，Dubbo，Seata ，Spring Cloud，RocketMQ，Arthas，Nacos等。   
+熟悉微服务领域相关技术或产品，如：gRPC，Dubbo，Nacos，Seata ，Spring Cloud，Higress，Sentinel，OpenSergo等。   
 熟悉容器相关技术或产品，如Docker, Kubernetes, Istio/Envoy等。   
 熟悉监控领域相关技术或产品，如：Prometheus，Zipkin，OpenTracing，Zabbix等。   
 熟悉数据处理相关技术或产品，如：Flink，Spark，HBase，ElasticSearch等。   
