@@ -4,7 +4,7 @@ Seata(Simple Extensible Autonomous Transaction Architecture) is an easy-to-use a
 
 
 ### Proposal
-Seata has a fairly huge community today. It is widely adopted by many companies and organizations and most of them are in China. We believe running Seata in Apache Software Foundation can facilitate development of a stronger and more diverse community.
+Seata has a fairly huge community today, and is widely adopted by many companies and organizations, but most of them are in China.  We believe running Seata in Apache Software Foundation can facilitate development of a stronger and more diverse community.
 
 Alibaba and Ant Group submit this proposal to donate Seata's source code and its side projects to the Apache Software Foundation. The code is already under the Apache License Version 2.0. Seata source code and its side projects are hosted on github right now:
 
@@ -17,43 +17,50 @@ Alibaba and Ant Group submit this proposal to donate Seata's source code and its
 
 ### Background
 
-With the evolution of technology architecture, data consistency becomes an insoluble technical problem when businesses use microservice architecture. Seata originated from the practice of Alibaba and Ant Group's internal business scenarios.
+With the evolution of technology architecture, data consistency becomes an insoluble technical problem when businesses use microservice architecture. Seata originated from the practical experience gained by Alibaba and Ant Group in their internal business scenarios.
 
 Here is the history of this project:
 
-1. Alibaba and Ant Group have internally developed a data middleware to solve the consistency of business application data for e-commerce, payment, logistics and other business scenarios. It can be traced back to 2007, and has been applied internally for more than 10 years. Its internal project is called TXC(taobao transaction constructor)/XTS(eXtended Transaction Service). Almost every payment and order will use this component.
+1. Alibaba and Ant Group have internally developed a data middleware to solve the consistency of business application data for e-commerce, payment, logistics and other business scenarios. This middleware can be traced back to 2007 and has been internally applied for over 10 years. The internal project is called TXC (Taobao Transaction Constructor)/XTS (eXtended Transaction Service). The project is used in almost every order and payment.
 
-2. Since 2013, Alibaba and Ant Group have released GTS(global transaction service)/DTX(Distributed Transaction-eXtended), a distributed transaction cloud service product, to external customers on Alibaba Cloud and Financial Cloud, and have accumulated a large number of users in various industries.
+2. Since 2013, Alibaba and Ant Group have released GTS(global transaction service)/DTX(Distributed Transaction-eXtended), a distributed transaction cloud service product, to external customers on Alibaba Cloud and Financial Cloud. They have accumulated a large number of users in various industry sectors.
 
-3. 2019.1 Alibaba Group officially opened the project and named it Fescar(Fast & EaSy Commit and Rollback). Since then, it was welcomed and praised by many developers, and once ranked first in the GitHub trending project.
+3. In January 2019, Alibaba Group officially launched the project and named it Fescar (Fast & Easy Commit and Rollback). Since then, it has been warmly welcomed and praised by numerous developers, and once ranked first in the GitHub trending List.
 
-4. 2019.4 Ant Group participated in Fescar, which makes it to be a more neutral and open community for distributed transaction, meanwhile the Fescar community decided to rename it as Seata.
+4. In April 2019, Ant Group joined in Fescar. In order to create a more open and neutral community, Fescar was renamed as Seata and migrated from the Alibaba organization to its independent organization.
 
-We'd like to share this outstanding framework at the Apache Software Foundation, and start developing a wider community through the Apache way. We believe more people and organizations can be benefit from it by doing so.
+We'd like to share this outstanding framework at the Apache Software Foundation, and build a more diverse community by following the Apache way. We believe more people and organizations can be benefit from it by doing so.
 
 
 ### Rationale
-Before the birth of Seata, developers mainly solved the data consistency problem in the application architecture through the eventually consistency. However, it causes many problems such as high business intrusion, poor synchronous interaction experience and weak data isolation. Seata can solve data consistency scenarios, including single application with multiple databases, across microservices, multiple different types of resources and so on. Seata currently offers several transaction modes including: AT(Automatic Transmission), TCC(try-confirm-cancel), Saga([Sagas](http://www.amundsen.com/downloads/sagas.pdf)), and XA(eXtended Architecture) transaction mode. Seata can not only meet the strong consistency of synchronous calls, but also meet the asynchronous eventually consistency based on Event. Developers can flexibly choose to use one or more of these transaction modes in combination according to the needs of business scenarios.
+Before Seata was introduced, developers primarily resolved data consistency problems in the application architecture by adopting eventual consistency. However, there were challenges including high business invasiveness, poor synchronization interactivity, and weak data isolation. Seata can resolve various types of data consistency scenarios, including single applications with multiple databases, cross-microservice interactions, and multiple different types of resources. Currently, Seata provides several transaction patterns, including AT (Automatic Transaction), TCC (Try-Confirm-Cancel), Saga ([Sagas](http://www.amundsen.com/downloads/sagas.pdf)), and XA(eXtended Architecture). Seata not only supports strong consistency for synchronous calls but also facilitates asynchronous eventually consistency based on events. Developers have the flexibility to choose one or more transaction patterns according to the requirements of their business scenarios.
 
-Seata define a Distributed Transaction as a Global Transaction, which is made up with a batch of branch transactions.Normally branch transaction is just local transaction, and there are 3 basic components in Seata:
+Seata define a Distributed Transaction as a Global Transaction, which is made up with a batch of branch transactions. Typically, a branch transaction in Seata is a local transaction. There are three basic components in Seata:
 
-1. TC(Transaction Coordinator): TC component is an independent server to maintain status of transactions, drive the global transactions to commit or rollback.
-2. TM(Transaction Manager): TM component is integrated in Applications to define the scope of global transaction: begin a global transaction, commit or rollback a global transaction.
-3. RM(Resource Manager): RM component is integrated in Applications to manage resources that branch transactions working on, connecting to TC for registering branch transactions and reporting status of branch transactions, and drive the branch transaction commit or rollback.
+1. TC(Transaction Coordinator): The TC component in Seata is an independent server responsible for maintaining the status of transactions. It drives the global transactions to either commit or rollback.
+2. TM(Transaction Manager): The TM component in Seata is integrated into applications to define the scope of global transactions. It allows applications to begin a global transaction, as well as to commit or rollback a global transaction.
+3. RM(Resource Manager): The RM component in Seata is integrated into applications to manage the resources that branch transactions are working on. It connects to the TC (Transaction Coordinator) to register branch transactions, report the status of branch transactions, and drive the branch transactions to commit or rollback.
 
 Developers can easily use Seata annotations and configuration to meet the requirements of various scenarios of distributed transactions without code intrusion.
 
 
 ### Initial Goals
-Our initial goals are to bring Seata into the ASF and build Seata into a one-stop distributed transaction solution. The most important thing is following ASF's governance module as well as integrating with Apache development process.
+First and foremost, we aim to enlarge the community. Seata is already a diverse community, but we want to see more. Secondly, we have more ideas about transaction processing, such as exploring transaction patterns that balance consistency and performance, utilizing a combination of multiple transaction patterns, and implementing non-intrusive transaction patterns without code intrusion. We believe we can address some of these while an Apache Incubator project.
 
 ### Current Status
 #### Meritocracy
-The intent of this proposal is to start building a diverse developer and user community around Seata following the ASF meritocracy model. Since Seata open source, we have solicited contributions via the website and presentations given to user groups and technical audiences and have received positive feedback and contributions. we have set up the Maintainer and Committer Team. New contributors are guided and reviewed by active Committer members. When they are ready, Maintainer will start a vote to promote him/her to become a member of Committer Team. Contributions are always welcomed and highly valued. We plan to continue this support for new contributors and work with those who contribute significantly to the project to encourage them to become committers.
+The intent of this proposal is to start building a diverse developer and user community around Seata following the Apache way. Since Seata was open-sourced, we have actively sought contributions through our website and presentations to user groups and technical audiences. We have received positive feedback and valuable contributions from the community. Furthermore, we have established the Maintainer and Committer Team to oversee the project's development and maintenance. New contributors are guided and reviewed by active Committer members. When they are ready, Maintainer will start a vote to promote him/her to become a member of Committer Team. Contributions are always welcomed and highly valued. We plan to continue supporting new contributors and collaborating with those who make significant contributions to the project, encouraging them to become committers.
 
 #### Community
 
-Seata is being developed by the development team inside Alibaba who's responsible for building internal distributed system too. Since Seata open source on github, it's been received up to 24k stars, forked for more than 8k times, and released more than 40 versions . Besides being widely adopted inside Alibaba and Ant Group, Seata is also widely adopted by hundreds of other companies including EVERBRIGHT Bank(cebbank.com), China EMS (China Express Mail Service, ems.com.cn), China Tower(china-tower.com), China Unicom(chinaunicom.com.cn), China Southern Airlines(csair.com), China TravelSky(travelsky.cn), Meituan(meituan.com), Didi (didiglobal.com), shopee(shopee.cn), 360(360.cn), 58 city net(58.com), iFLYTEK(global.iflytek.com), ViVo(vivo.com.cn), XiaoPeng(xiaopeng.com), Beke(bj.ke.com), ZTO Express(zto.com), YunDa Express(yundaex.com), Haier(haier.com), TCL(tcl.com) and many more. For more companies information, please [click here](https://github.com/seata/seata/issues/1246). We hope to grow the base of contributors by inviting all those who offer contributions and excel through the use of The Apache Way. Contributions from outside of Alibaba are constantly accepted by Seata project and its side projects. Right now, we make use of github as code hosting.
+Seata is being developed by the development team inside Alibaba who's responsible for building internal distributed 
+system too. Since Seata was open-sourced on GitHub, it has gained significant traction, receiving up to 24k stars, 
+being forked over 8k times, and having more than 40 versions released. Besides being widely adopted inside Alibaba 
+and Ant Group, Seata is also widely adopted by hundreds of other companies, including EVERBRIGHT Bank(cebbank.com), 
+China EMS (China Express Mail Service, ems.com.cn), China Tower(china-tower.com), China Unicom(chinaunicom.com.cn), 
+China Southern Airlines(csair.com), China TravelSky(travelsky.cn), Meituan(meituan.com), Didi (didiglobal.com), 
+shopee(shopee.cn), 360(360.cn), 58 city net(58.com), iFLYTEK(global.iflytek.com), ViVo(vivo.com.cn), XiaoPeng
+(xiaopeng.com), Beke(bj.ke.com), ZTO Express(zto.com), YunDa Express(yundaex.com), Haier(haier.com), TCL(tcl.com) and many more. For more information, please [click here](https://github.com/seata/seata/issues/1246). We aim to expand the contributor by inviting all those who make valuable contributions and excel in adhering to The Apache Way. The Seata project and its side projects always accept contributions from individuals outside of Alibaba. Currently, we utilize GitHub as our code hosting platform.
 
 
 
@@ -62,20 +69,20 @@ The core developers would come from both Alibaba and Ant Group. They include peo
 
 
 ### Known Risks
-The project is well known in distributed transaction and Microservice field, and live more than 4 years. We are not sure there exists a risk, but definitely have a challenge for us.
+The project is well-known in the field of distributed transactions and Microservices, and has been live for over 4 years. We are not sure there exists a risk, but definitely have a challenge for us.
 
 #### Orphaned products
-Some core developers currently work full-time on the Seata project for Alibaba. Seata provides a critical internal infrastructure and has been in production use at Alibaba since 2013. In addition, Seata has been used by hundreds of companies in their business systems. So there is no concern that it will become an orphaned product.
+Some core developers currently work full-time on the Seata project for Alibaba. Seata provides a critical internal infrastructure and has been in production use at Alibaba since 2013. In addition, Seata has been widely adopted by hundreds of companies for integration into their business systems. So there is no concern that it will become an orphaned product.
 
 
 #### Inexperience with Open Source
-The founder of the project, Min Ji, is an open-source enthusiast who has been actively involved in the open-source community for over 5 years. He has contributed to numerous open-source projects, including Apache Dubbo, Nacos, Netty, Spring Cloud Alibaba, Mybatis, and RxJava.   
+The founder of the Seata community, Min Ji, is an open-source enthusiast who has actively participated in the open-source community for over 5 years. He has made contributions to numerous open-source projects, including Apache Dubbo, Nacos, Netty, Spring Cloud Alibaba, Mybatis, and RxJava.  
 In addition, the core developers of the community include PMCs and committers from the Apache Dubbo community.
 
 
 #### Homogenous Developers
 
-The current set of developers work across a variety of organizations including Alibaba, Ant, TongDun, Tencent, Baidu, JD, 360, NetEase, Truthai, Helios and HuiKang. Furthermore, many other companies forked Seata and continued to enhance in their own private repositories. We plan to encourage them to contribute and invite them as contributors to work on one common code base. The goal is to establish a vibrant developer community and we will actively encourage new contributors.
+The current group of developers involved in the project represents a diverse range of organizations, including Alibaba, Ant, TongDun, Tencent, Baidu, JD, 360, NetEase, Truthai, Helios, and HuiKang. Furthermore, many other companies forked Seata and continued to enhance in their own private repositories. We plan to encourage them to contribute and invite them as contributors to work on one common code base. The goal is to establish a vibrant developer community and we will actively encourage new contributors.
 
 #### Reliance on Salaried Developers
 Currently, only some of the core developers in Alibaba and Ant are paid to work on Seata. Salaried Developers is a very small group, and we have established a diverse developer community. We look forward to building a strong community around the project in order to encourage more contributors to join the project.
@@ -91,7 +98,7 @@ Currently, only some of the core developers in Alibaba and Ant are paid to work 
 
 In addition, Seata also relies on Apache products such as tomcat, httpcomponents.
 
-#### A Excessive Fascination with the Apache Brand
+#### An Excessive Fascination with the Apache Brand
 While we respect the reputation of the Apache brand and have no doubt that it will attract new contributors and users, our interest is primarily to give Seata a solid home as an open source project following an established development model. More reasons are provided in the Rationale and Alignment sections.
 
 ### Documentation
@@ -100,24 +107,24 @@ A complete set of Seata documentations is provided on seata.io in both English a
 - [Chinese](https://seata.io/zh-cn/)
 
 ### Initial Source
-Seata was initially developed within Alibaba, and then was open-sourced with The Apache License 2.0 under Alibaba Group on github in 2019. The open source project is named Fescar.
-After Ant join the Fescar project, Fescar is renamed to Seata. The core code base migrate from Alibaba organization to Seata organization. Specifically, the initial source includes:
+Seata was initially developed within Alibaba and later open-sourced under Alibaba Group on GitHub in 2019, using Apache-2.0 License. This open-source project was initially named Fescar. After Ant joined the Fescar community, it was renamed as Seata, and the relevant code repositories were migrated from the Alibaba organization to the Seata organization. Specifically, the initial source includes:
 
 - Seata code base:
-    - https://github.com/seata/seata （Java）
-    - https://github.com/seata/seata-go (GoLang)
-- Documents/Website: https://github.com/seata/seata.github.io
+  - https://github.com/seata/seata （Java）
+  - https://github.com/seata/seata-go (GoLang)
+- Documentations/Website: https://github.com/seata/seata.github.io
 - Samples: https://github.com/seata/seata-samples
 - Other side projects hosted under [seata group](https://github.com/seata)
 
 
 ### Source and Intellectual Property Submission Plan
 - Source:
-    -  The project is under Apache Licensed 2.0 already. As soon as Seata is approved to join ASF incubator, we can transfer the source code and documentation to the Apache Foundation.
-    -  Currently all artifacts are copyright to 'Seata.io Organization' and the 'Seata.io' domain owned by Alibaba. The Seata community currently uses [Alibaba's ICLA](https://cla-assistant.io/seata/seata), and more than 180 contributors have signed up to ICLA, covering all core developers.  Here, there are no corporate developers involved other than Alibaba and Ant Group, so there is no need for a CCLA (Corporate Contributor License Agreement) from any other companies besides Alibaba and Ant Group. When Seata enters the ASF incubator, Alibaba and Ant Group will also sign the CCLA with ASF.
-    -  Alibaba and Ant Group will jointly sign the SGA (Software Grant Agreement) with ASF.
-- Domains: [seata.io](https://seata.io/),[demo.seata.io](http://demo.seata.io/) are all currently owned by Alibaba. Alibaba has completed the preparations to transfer the domain name to ASF.
-- Trademark: The Seata trademark is currently owned by Ant Group. Ant Group will complete the transfer of the trademark according to the requirements of the project graduation checklist.
+  - The project has been licensed under Apache License 2.0. As soon as Seata is approved to join ASF incubator, we can transfer the source code and documentation to the Apache Foundation.
+  - Currently, all artifacts are copyrighted by the 'Seata.io Organization' and are associated with the 'Seata.io' domain owned by Alibaba. The Seata community uses [Alibaba's ICLA](https://cla-assistant.io/seata/seata), with over 180 contributors having signed up for it, covering all core developers. There are no corporate developers involved other than Alibaba and Ant Group, so there is no need for a CCLA from any other companies besides Alibaba and Ant Group. After Seata is approved to enter the ASF Incubator, Alibaba and Ant Group will also sign the CCLA with ASF.
+
+- Alibaba and Ant Group will sign the SGA (Software Grant Agreement) jointly with ASF.
+- Domains: [seata.io](https://seata.io/),[demo.seata.io](http://demo.seata.io/) are all currently owned by Alibaba. Alibaba has completed the necessary preparations for transferring the domain name to ASF.
+- Trademark: The Seata trademark is currently owned by Ant Group. Ant Group will proceed with the transfer of the trademark in accordance with the project graduation checklist.
 
 
 
@@ -126,7 +133,7 @@ After Ant join the Fescar project, Fescar is renamed to Seata. The core code bas
 All dependencies have Apache compatible licenses except MySQL (GPL-2.0). We will remove MySQL dependency before the first release.
 
 
-##### Seata console（Front-end project）:
+##### Seata console（front-end project）:
 https://github.com/seata/seata/tree/develop/console/src/main/resources/static/console-fe
 https://github.com/seata/seata/tree/develop/saga/seata-saga-statemachine-designer
 
