@@ -4,7 +4,7 @@ Seata(Simple Extensible Autonomous Transaction Architecture) is an easy-to-use a
 
 
 ### Proposal
-Seata has a fairly huge community today, and is widely adopted by many companies and organizations, but most of them are in China.  We believe running Seata in Apache Software Foundation can facilitate development of a stronger and more diverse community.
+Seata has a fairly huge community. It is widely adopted by many companies and organizations, but most of them are in China. We believe running Seata in Apache Software Foundation can facilitate development of a stronger and more diverse community.
 
 Alibaba and Ant Group submit this proposal to donate Seata's source code and its side projects to the Apache Software Foundation. The code is already under the Apache License Version 2.0. Seata source code and its side projects are hosted on github right now:
 
