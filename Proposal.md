@@ -53,14 +53,7 @@ The intent of this proposal is to start building a diverse developer and user co
 
 #### Community
 
-Seata is being developed by the development team inside Alibaba who's responsible for building internal distributed 
-system too. Since Seata was open-sourced on GitHub, it has gained significant traction, receiving up to 24k stars, 
-being forked over 8k times, and having more than 40 versions released. Besides being widely adopted inside Alibaba 
-and Ant Group, Seata is also widely adopted by hundreds of other companies, including EVERBRIGHT Bank(cebbank.com), 
-China EMS (China Express Mail Service, ems.com.cn), China Tower(china-tower.com), China Unicom(chinaunicom.com.cn), 
-China Southern Airlines(csair.com), China TravelSky(travelsky.cn), Meituan(meituan.com), Didi (didiglobal.com), 
-shopee(shopee.cn), 360(360.cn), 58 city net(58.com), iFLYTEK(global.iflytek.com), ViVo(vivo.com.cn), XiaoPeng
-(xiaopeng.com), Beke(bj.ke.com), ZTO Express(zto.com), YunDa Express(yundaex.com), Haier(haier.com), TCL(tcl.com) and many more. For more information, please [click here](https://github.com/seata/seata/issues/1246). We aim to expand the contributor by inviting all those who make valuable contributions and excel in adhering to The Apache Way. The Seata project and its side projects always accept contributions from individuals outside of Alibaba. Currently, we utilize GitHub as our code hosting platform.
+Seata is being developed by the development team inside Alibaba who's responsible for building internal distributed system too. Since Seata was open-sourced on GitHub, it has gained significant traction, receiving up to 24k stars, being forked over 8k times, and having more than 40 versions released. Besides being widely adopted inside Alibaba and Ant Group, Seata is also widely adopted by hundreds of other companies, including EVERBRIGHT Bank(cebbank.com), China EMS (China Express Mail Service, ems.com.cn), China Tower(china-tower.com), China Unicom(chinaunicom.com.cn), China Southern Airlines(csair.com), China TravelSky(travelsky.cn), Meituan(meituan.com), Didi (didiglobal.com), shopee(shopee.cn), 360(360.cn), 58 city net(58.com), iFLYTEK(global.iflytek.com), ViVo(vivo.com.cn), XiaoPeng(xiaopeng.com), Beke(bj.ke.com), ZTO Express(zto.com), YunDa Express(yundaex.com), Haier(haier.com), TCL(tcl.com) and many more. For more information, please [click here](https://github.com/seata/seata/issues/1246). We aim to expand the contributor by inviting all those who make valuable contributions and excel in adhering to The Apache Way. The Seata project and its side projects always accept contributions from individuals outside of Alibaba. Currently, we utilize GitHub as our code hosting platform.
 
 
 
