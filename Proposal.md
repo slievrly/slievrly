@@ -69,8 +69,9 @@ Some core developers currently work full-time on the Seata project for Alibaba. 
 
 
 #### Inexperience with Open Source
-The founder of the Seata community, Min Ji, is an open-source enthusiast who has actively participated in the open-source community for over 5 years. He has made contributions to numerous open-source projects, including Apache Dubbo, Nacos, Netty, Spring Cloud Alibaba, Mybatis, and RxJava.  
-In addition, the core developers of the community include PMCs and committers from the Apache Dubbo community.
+The founder of the Seata community, Min Ji, is an open-source enthusiast who has actively participated in the open-source community for over 5 years. He has made contributions to numerous open-source projects, including Apache Dubbo, Nacos, Netty, Spring Cloud Alibaba, Mybatis, and RxJava.
+
+In addition, part of the developers are members of the Apache Dubbo PMC and/or Apache Dubbo committers.
 
 
 #### Homogenous Developers
